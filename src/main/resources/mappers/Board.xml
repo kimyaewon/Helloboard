@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.spring.demo.mapper.BoardMapper">
+    <select id="getTestData" resultType="com.spring.demo.dto.BoardDTO">
+        select
+            title,
+            name
+        from
+            DB_TEST
+    </select>
+    
+    <insert id="insertBoard" parameterType="com.spring.demo.dto.BoardDTO">
+			insert into 
+			myboard
+			values (
+			#{idx},
+			#{title},
+			#{contents}
+			)
+</insert>
+</mapper>
